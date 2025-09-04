@@ -16,7 +16,7 @@ def main():
 		 "convert csv to json in the on prem DF and store the json into new cloud GCS location")
 	cust_schema=StructType([ StructField("id",IntegerType(),False),
 							 StructField("custfname",StringType(), False),
-							 StructField("custlname",StringType,True),
+							 StructField("custlname",StringType(),True),
 							 StructField("custage",IntegerType(),True),
 							 StructField("custprofession",StringType(),True)])
 	gcs_df=spark.read.csv("gs://inceptez-data-store-yuvaraj/dataset/custs",mode="dropmalformed",schema=cust_schema)
